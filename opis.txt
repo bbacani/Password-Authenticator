@@ -1,0 +1,15 @@
+Za spremanje lozinke prvu ju hashiram sa SHA256, a zatim taj hash hashiram koristeći bcrypt sa faktorom 12,
+što znači da prolazi kroz 4096 rundi ekspanzije
+
+Lozinka mora biti određene kompleksnosti, te će se od korisnika tražiti ponovni unos tako dugo dok lozinka nije
+duljine između 8 i 64 znakova, sadrži barem po jedno malo slovo, jedno veliko slovo i jedan broj
+te ako je zatražena promjena lozinke, ne smije biti jednaka kao trenutna
+
+Hash se sprema u hash.txt, a lista korisnika koji moraju promijeniti lozinku u forcepass.txt
+
+
+Kod logina ponovo se generira pwd iz predane lozinke te se predaje u bcrypt_check, ako vrati True login je uspješan
+te ako se korisničko ime nalazi u popisu forcepass, korisnik mora promijeniti lozinku
+Također, unos lozinke se ne može vidjeti na ekranu tijekom logina
+
+Ako je predan krivi username ili kriva lozinka, vraća se poruka 'Username or password incorrect.'

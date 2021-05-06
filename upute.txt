@@ -1,0 +1,21 @@
+Rjesenje je pisano u python-u, potreban je python 3.9 prevoditelj i biblioteka pycryptodome.
+
+Inicijaliziramo bazu na sljedeci nacin:
+- python usermgmt.py init
+
+
+Dodajemo novo korisnicko ime na sljedeci nacin:
+- python usermgmt.py add sgros
+
+Mijenjamo lozinku postojeceg korisnickog imena na sljedeci nacin:
+- python usermgmt.py passwd sgros
+
+Forsiramo promjenu lozinke postojeceg korisnickog imena na sljedeci nacin:
+- python usermgmt.py forcepass sgros
+
+Uklanjamo postojece korisnicko ime na sljedeci nacin:
+- python usermgmt.py del sgros
+
+
+Ulogiramo se na sljedeci nacin
+- python login.py sgros
